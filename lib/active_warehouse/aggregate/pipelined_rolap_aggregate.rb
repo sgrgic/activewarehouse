@@ -211,7 +211,7 @@ module ActiveWarehouse #:nodoc
         dimension_fields = aggregate_dimension_fields
         aggregate_levels = dimension_fields.collect{|dim, levels|
           min_level = create_all_level?(dim, options) ? 0 : 1
-          (min_level..levels.count).collect.reverse
+          (min_level..levels.count).to_a.reverse
         }.sequence
         
         # puts "aggregate_levels:\n#{aggregate_levels.inspect}"
