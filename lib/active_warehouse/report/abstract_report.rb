@@ -43,12 +43,12 @@ module ActiveWarehouse #:nodoc:
       attr_accessor :conditions
 
 
-      def initialize(attributes = {})
-        attributes.each do |name, value|
-          send("#{name}=", value)
-        end
-        super
-      end
+      #def initialize(attributes = {})
+      #  attributes.each do |name, value|
+      #    send("#{name}=", value)
+      #  end
+      #  super
+      #end
 
 
       # Set the cube name
