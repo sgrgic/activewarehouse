@@ -46,12 +46,12 @@ module ActiveRecord #:nodoc:
         schema_information << dump if dump
         
         begin
-          plugins = ActiveRecord::Base.connection.select_all("SELECT * FROM #{ActiveWarehouse::Migrator.schema_migrations_table_name}")
-          plugins.each do |plugin|
-            if (version = plugin['version'].to_i) > 0
-              schema_information << "INSERT INTO #{ActiveWarehouse::Migrator.schema_migrations_table_name} (version) VALUES (#{version})"
-            end
-          end
+          #plugins = ActiveRecord::Base.connection.select_all("SELECT * FROM #{ActiveWarehouse::Migrator.schema_migrations_table_name}")
+          #plugins.each do |plugin|
+          #  if (version = plugin['version'].to_i) > 0
+          #    schema_information << "INSERT INTO #{ActiveWarehouse::Migrator.schema_migrations_table_name} (version) VALUES (#{version})"
+          #  end
+          #end
         rescue ActiveRecord::StatementInvalid 
           # No Schema Info
         end
